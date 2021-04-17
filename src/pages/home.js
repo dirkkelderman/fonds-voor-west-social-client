@@ -11,7 +11,6 @@ export class home extends Component {
     componentDidMount(){
         axios.get('/screams')
             .then(res => {
-                console.log(res.data)
                 this.setState({
                     screams: res.data,
                 })
@@ -21,7 +20,7 @@ export class home extends Component {
 
     render() {
         let recentScreamsMarkup = this.state.screams ? (
-            this.state.screams.map(scream => <Scream scream={scream} />)
+            this.state.screams.map(scream => <Scream key={scream.screamId} scream={scream} />)
         ) : <p>Loading...</p>
 
         return (
