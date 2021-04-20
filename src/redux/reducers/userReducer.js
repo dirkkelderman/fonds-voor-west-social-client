@@ -1,8 +1,5 @@
 import {
   SET_USER,
-  SET_ERROR,
-  CLEAR_ERRORS,
-  LOADING_UI,
   SET_AUTHENTICATED,
   SET_UNAUTHENTICATED,
 } from "../types";
