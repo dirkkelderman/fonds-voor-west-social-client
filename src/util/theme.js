@@ -45,16 +45,16 @@ const theme = {
     invisibleSeparator: {
         border: 'none',
         margin: 4
-      },
-      visibleSeparator: {
+    },
+    visibleSeparator: {
         width: '100%',
         borderBottom: '1px solid rgba(0,0,0,0.1)',
         marginBottom: 20
-      },
-      paper: {
+    },
+    paper: {
         padding: 20
       },
-      profile: {
+    profile: {
         '& .image-wrapper': {
           textAlign: 'center',
           position: 'relative',
