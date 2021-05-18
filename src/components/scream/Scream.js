@@ -64,7 +64,11 @@ class Scream extends Component {
 
     return (
       <Card className={classes.card}>
-        <CardMedia image={userImage} title="Profile Image" className={classes.image}/>
+        {userImage ? (
+          <CardMedia image={userImage} title="Profile Image" className={classes.image}/>
+        ) : (
+          <p>Loading..</p>
+        )}
         <CardContent className={classes.content}>
           <Typography 
             variant="h5" 
@@ -81,11 +85,11 @@ class Scream extends Component {
           <Typography variant="body1">{body}</Typography>
           <LikeButton screamId={screamId} />
           <span>{likeCount} Likes</span>
-          <MyButton>
+          <MyButton tip="comments">
             <ChatIcon color="primary"/> 
           </MyButton>
           <span>{commentCount} Comments</span>
-          <ScreamDialog screamId={screamId} userHandle={userHandle} />
+          <ScreamDialog screamId={screamId} userHandle={userHandle} openDialog={this.props.openDialog} />
         </CardContent>
       </Card>
     );
@@ -96,6 +100,7 @@ Scream.propTypes = {
   user: PropTypes.object.isRequired,
   scream: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
+  openDialog: PropTypes.bool
 }
 
 const mapStateToProps = state => ({

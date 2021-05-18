@@ -5,6 +5,7 @@ import {
     LOADING_UI,
     SET_UNAUTHENTICATED,
     LOADING_USER,
+    MARK_NOTIFICATIONS_READ,
     // MARK_NOTIFICATIONS_READ
   } from '../types';
 
@@ -84,6 +85,17 @@ import {
       .catch(err => console.log(err));
   }  
   
+
+  export const markNotificationsRead = (notificationsIds) => (dispatch) =>{
+    axios.post('notifications', notificationsIds)
+      .then(res => {
+        dispatch({
+          type: MARK_NOTIFICATIONS_READ
+        })
+      })
+      .catch(err => console.log(err));
+  }
+
   const setAuthorizationHeader = (token) => {
     const FBIdToken = `Bearer ${token}`;
     localStorage.setItem('FBIdToken', FBIdToken);

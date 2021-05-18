@@ -35,7 +35,7 @@ class LikeButton extends Component {
       const { authenticated } = this.props.user
     const likeButton = !authenticated ? (
         <Link to="/login">
-      <MyButton tip="like">
+      <MyButton tip="Like">
           <FavoriteBorder color="primary" />
       </MyButton>
         </Link>
@@ -55,7 +55,7 @@ class LikeButton extends Component {
 
 LikeButton.propTypes = {
   user: PropTypes.object.isRequired,
-  sreamId: PropTypes.string.isRequired,
+  screamId: PropTypes.string.isRequired,
   likeScream: PropTypes.func.isRequired,
   unlikeScream: PropTypes.func.isRequired,
 };

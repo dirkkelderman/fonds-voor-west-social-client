@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import EditDetails from './EditDetails'
 import MyButton from "../../util/MyButton";
+import ProfileSkeleton from '../../util/ProfileSkeleton';
 
 //MUI stuff
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -101,7 +102,7 @@ class Profile extends Component {
               <CalendarToday color="primary" />{" "}
               <span>Joined {dayjs(createdAt).format("MMM YYYY")} </span>
             </div>
-            <MyButton tip="logout" onClick={this.handleLogout} >
+            <MyButton tip="Logout" onClick={this.handleLogout} >
                     <KeyboardReturn color="primary"/>
                 </MyButton>
             <EditDetails/>
@@ -133,7 +134,7 @@ class Profile extends Component {
         </Paper>
       )
     ) : (
-      <p>Loading...</p>
+      <ProfileSkeleton />
     );
 
     return profileMarkup;
